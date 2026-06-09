@@ -1,0 +1,482 @@
+/* Color Systems Matrix */
+/* ==========================================================================
+   Theme Variables Matrix Configuration
+   ========================================================================== */
+/* Light Base Theme Mapping */
+:root, html[data-theme="light"] {
+    --primary-color: #0052cc;
+    --dark-neutral: #1a202c;
+    --light-neutral: #f7fafc;
+    --card-bg: #ffffff;
+    --accent-color: #e28743;
+    --text-main: #4a5568;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --radius: 8px;
+}
+
+/* Dark Base Theme Overrides */
+html[data-theme="dark"] {
+    --primary-color: #3b82f6;       /* Brighter neon blue for clear visibility on dark layout backgrounds */
+    --dark-neutral: #f7fafc;        /* Off-white text reading surfaces */
+    --light-neutral: #0f172a;       /* Deep slate base layout sheet background */
+    --card-bg: #1e293b;             /* High-contrast lighter slate element containment card fills */
+    --text-main: #94a3b8;           /* Muted reading gray contrast typography scale */
+    --border-color: #334155;        /* Subdued structural line delimiters */
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Base element structural transitions */
+body {
+    background-color: var(--light-neutral);
+    color: var(--dark-neutral);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Fluid color shifting */
+}
+
+/* Refactor structural layout nodes to support variables mapping */
+.main-header, .sidebar-widget, .blog-card, .full-article, .sidebar-thumb-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-image-wrap, .print-table th, .calculator-output-panel {
+    background-color: var(--light-neutral) !important;
+    color: var(--dark-neutral) !important;
+}
+
+.card-badge {
+    background-color: rgba(59, 130, 246, 0.1) !important; /* Semi-transparent color fill across variable steps */
+    color: var(--primary-color) !important;
+}
+/* Base Document Formatting */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.small-container { max-width: 650px; }
+
+/* Navigation Bar */
+.main-header {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 800; text-decoration: none; color: var(--text-primary); }
+.logo span { color: var(--primary-color); }
+.nav-links { display: flex; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 24px; font-weight: 500; }
+.nav-links a.active { color: var(--primary-color); }
+
+/* Theme Swap Button */
+.theme-toggle-btn {
+    background: var(--bg-main);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 24px;
+}
+
+/* Archive Banner */
+.blog-hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 64px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.blog-hero h1 { font-size: 42px; margin-bottom: 12px; font-weight: 800; }
+.blog-hero p { font-size: 18px; opacity: 0.85; max-width: 700px; margin: 0 auto 24px; }
+.search-container input { width: 100%; max-width: 500px; padding: 14px 20px; border: none; border-radius: var(--radius); font-size: 16px; color: #1a202c; }
+
+/* Grid Layout Architecture */
+.blog-layout { display: grid; grid-template-columns: 260px 1fr; gap: 40px; margin-bottom: 64px; }
+.sidebar-widget { background: var(--bg-surface); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border-color); }
+.sidebar-widget h3 { margin-bottom: 16px; font-size: 18px; }
+.category-list { list-style: none; }
+.category-list li { margin-bottom: 6px; }
+.filter-btn { width: 100%; text-align: left; background: transparent; border: none; padding: 10px; font-size: 15px; cursor: pointer; border-radius: 6px; color: var(--text-muted); }
+.filter-btn.active, .filter-btn:hover { background-color: var(--bg-main); color: var(--primary-color); font-weight: 600; }
+
+.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.blog-card { background: var(--bg-surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border-color); }
+.card-badge { background-color: var(--card-badge-bg); color: var(--primary-color); padding: 4px 10px; font-size: 12px; font-weight: 700; text-transform: uppercase; width: max-content; margin: 20px 20px 0; border-radius: 4px; }
+.card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.card-content h2 { font-size: 19px; margin-bottom: 10px; }
+.card-content h2 a { text-decoration: none; color: var(--text-primary); }
+.card-content p { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 14px; font-size: 13px; color: var(--text-muted); }
+.read-more { font-weight: 600; color: var(--primary-color); text-decoration: none; }
+
+/* Form Processing Section Layout */
+.quote-section { padding: 64px 0; background: var(--bg-surface); border-top: 1px solid var(--border-color); }
+.quote-form-container h2 { font-size: 28px; margin-bottom: 8px; text-align: center; }
+.quote-form-container p { text-align: center; color: var(--text-muted); margin-bottom: 32px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+.form-group label { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+.form-group input, .form-group select { padding: 12px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-primary); border-radius: var(--radius); font-size: 15px; }
+.form-group input:focus, .form-group select:focus { outline: 2px solid var(--primary-color); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Validator Output Strings */
+.error-msg { font-size: 12px; color: #e53e3e; margin-top: 4px; display: none; }
+.form-group.invalid input, .form-group.invalid select { border-color: #e53e3e; }
+.form-group.invalid .error-msg { display: block; }
+.submit-btn { background: var(--primary-color); color: #ffffff; border: none; padding: 14px; font-weight: 600; font-size: 16px; border-radius: var(--radius); cursor: pointer; width: 100%; margin-top: 10px; }
+.submit-btn:hover { background: var(--primary-hover); }
+.form-success-box { display: none; background: #c6f6d5; color: #22543d; padding: 20px; border-radius: var(--radius); text-align: center; font-weight: 600; margin-top: 20px; }
+
+/* Post Article Content View Split Wrapper */
+.detail-wrapper { display: flex; gap: 40px; margin-top: 40px; position: relative; }
+.article-detail-container { max-width: 800px; flex-grow: 1; margin-bottom: 64px; }
+
+/* Sticky Left Side Dock Elements */
+.sticky-share-panel { position: sticky; top: 120px; height: max-content; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 10px; }
+.share-title { font-size: 10px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
+.share-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-primary); font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+.share-btn:hover { transform: scale(1.08); color: var(--primary-color); }
+.copy-alert { background: #48bb78; color: white; font-size: 11px; padding: 2px 6px; border-radius: 4px; display: none; }
+
+/* In-Post Elements */
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--primary-color); text-decoration: none; font-weight: 500; }
+.full-article { background: var(--bg-surface); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border-color); }
+.full-article h1 { font-size: 34px; line-height: 1.3; margin-bottom: 16px; }
+.article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; }
+.article-body h2 { font-size: 24px; margin: 32px 0 16px; }
+.article-body p { font-size: 17px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+.article-body ul { margin-bottom: 20px; padding-left: 24px; color: var(--text-muted); }
+.article-body li { margin-bottom: 8px; }
+
+.print-table { width: 100%; border-collapse: collapse; margin: 32px 0; }
+.print-table th, .print-table td { padding: 12px; border: 1px solid var(--border-color); text-align: left; }
+.print-table th { background-color: var(--bg-main); font-weight: 600; }
+
+.cta-box { background: linear-gradient(135deg, #0052cc 0%, #003d99 100%); color: #ffffff; padding: 40px; border-radius: var(--radius); margin-top: 40px; text-align: center; }
+.cta-box h3 { font-size: 24px; margin-bottom: 12px; color: #ffffff;}
+.cta-box p { opacity: 0.9; max-width: 600px; margin: 0 auto 24px; color: #ffffff;}
+.large-cta { background-color: var(--accent-color); color: white; text-decoration: none; padding: 14px 32px; border-radius: var(--radius); font-weight: 600; display: inline-block; }
+
+.main-footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 32px 0; font-size: 14px; border-top: 1px solid #1e293b; }
+
+/* Responsive Scale Layout shifts */
+@media (max-width: 768px) {
+    .blog-layout { grid-template-columns: 1fr; }
+    .detail-wrapper { flex-direction: column-reverse; }
+    .sticky-share-panel { position: static; flex-direction: row; justify-content: center; padding: 20px 0; border-top: 1px solid var(--border-color); }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .nav-links a:not([href*="quote"]) { display: none; }
+}
+
+/* ==========================================================================
+   Responsive Mobile Menu Additions
+   ========================================================================== */
+
+/* Hamburger Button Icon Configuration */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--dark-neutral);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Page Layout Utility Grids */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+
+/* Interactive Accordion Layout */
+/* ==========================================================================
+   B2B Interactive Accordion Engine
+   ========================================================================== */
+.faq-item { 
+    background-color: var(--card-bg) !important; 
+    border: 1px solid var(--border-color) !important; 
+    border-radius: var(--radius); 
+    margin-bottom: 16px; 
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Question Header styling */
+.faq-question { 
+    width: 100%; 
+    padding: 20px; 
+    text-align: left; 
+    background: none !important; /* Strips implicit global button fills */
+    border: none !important; 
+    font-size: 17px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    transition: color 0.2s ease;
+    
+    /* Dynamically evaluates: Deep charcoal black in Light Mode, crisp silver white in Dark Mode */
+    color: var(--dark-neutral) !important; 
+}
+
+/* Visual Anchor Indicators (+/- status symbols) */
+.faq-question::after { 
+    content: '+'; 
+    font-size: 22px; 
+    font-weight: 600;
+    color: var(--primary-color) !important; 
+    transition: transform 0.2s; 
+}
+
+/* Rotate indicator icon slightly when container opens */
+.faq-item.open .faq-question::after { 
+    content: '−';
+}
+
+/* Hidden container channel block */
+.faq-answer { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease; 
+    padding: 0 20px;
+}
+
+/* Open expansion variable state */
+.faq-item.open .faq-answer { 
+    /* Max-height uses dynamic script parameters. This block holds structural line-height thresholds */
+    padding: 0 20px 20px 20px; 
+}
+
+/* Inside Paragraph Contrast Fix */
+.faq-answer p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    /* Soft dark gray reading text in Light Mode, clean light gray in Dark Mode */
+    color: var(--text-main) !important; 
+}
+
+
+/* Contact Interface Inputs */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius); font-size: 15px; background: #ffffff; }
+.form-group textarea { height: 120px; resize: vertical; }
+
+/* Responsive Media Queries Override */
+/* ==========================================================================
+   Bulletproof Mobile Navigation System Engine
+   ========================================================================== */
+/* ==========================================================================
+   Restored & Optimized Mobile Navigation Engine
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Force display of the hamburger toggle button */
+    .menu-toggle { 
+        display: flex !important; 
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001; /* Keeps button over the sliding drawer panel */
+    }
+
+    .menu-toggle .bar {
+        width: 100%;
+        height: 2px;
+        background-color: var(--dark-neutral, #1a202c);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* 2. Base configuration for the hidden mobile slide-out drawer container */
+    .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Kept safely offscreen by default */
+        width: 280px !important;
+        height: 100vh !important;
+        background-color: var(--card-bg, #ffffff) !important; /* White in light mode, deep slate in dark mode */
+        box-shadow: -4px 0 12px rgba(0,0,0,0.15) !important;
+        
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        
+        padding: 80px 24px 24px 24px !important;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 1000 !important;
+    }
+
+    /* 3. Script-triggered sliding state rule */
+    .nav-links.active {
+        right: 0 !important; /* Slides the drawer out cleanly */
+    }
+
+    /* 4. Text contrast formatting across light and dark modes */
+    .nav-links a,
+    .nav-links a:not(.cta-btn),
+    .nav-links .theme-toggle-btn,
+    #themeToggle {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        margin: 8px 0 !important;
+        padding: 12px 0 !important;
+        text-align: left !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        background: none !important;
+        border: none !important;
+        border-bottom: 1px solid var(--border-color, #e2e8f0) !important;
+        
+        /* Dynamic link color flip: Charcoal in Light Mode, crisp White in Dark Mode */
+        color: var(--dark-neutral) !important; 
+    }
+
+    /* 5. Keep primary CTA button styling readable and isolated */
+    .nav-links a.cta-btn {
+        background-color: var(--primary-color, #0052cc) !important;
+        color: #ffffff !important; /* Locks text color to white for optimal contrast */
+        text-align: center !important;
+        border-radius: var(--radius, 8px) !important;
+        padding: 12px 20px !important;
+        border-bottom: none !important;
+        margin-top: 16px !important;
+    }
+
+    /* Animated cross icon states */
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Layout column system collapse utility */
+    .blog-layout, .grid-2 { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+
+@media (max-width: 900px) {
+    /* Collapse sidebars into linear downward layout matrices */
+    .article-split-layout {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+    .detail-sidebar {
+        position: static !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensures link color flips safely to follow variables rather than hardcoded rules */
+    .nav-links a,
+    .nav-links a:not(.cta-btn),
+    .nav-links .theme-toggle-btn {
+        color: var(--dark-neutral) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .nav-links .cta-btn {
+        color: #ffffff !important; /* Keep call to action links white text */
+    }
+}
+
+
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* High index keeps it visible on top of cards and tables */
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+/* ==========================================================================
+   Image Asset Media Aspect Handlers
+   ========================================================================== */
+.card-image-wrap {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #edf2f7;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image cleanly inside its container bounding box */
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Zoom Micro-interaction */
+.blog-card:hover .card-img {
+    transform: scale(1.05);
+}
+
+/* Adjust margin when image is placed above badge in feed cards */
+.blog-card .card-badge {
+    margin: 16px 20px 0 20px !important;
+}
+/* ==========================================================================
+   Image Thumbnail Preview Component
+   ========================================================================== */
+.preview-thumbnail-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.preview-img-container {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius);
+    border: 2px solid var(--primary-color);
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: var(--shadow);
+}
+
+.preview-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

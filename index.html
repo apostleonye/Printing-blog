@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Print Insights | Corporate Printing & Packaging Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+		 <a href="index.html" class="logo">Print<span>Expertise</span></a>
+           <!-- Mobile Menu Trigger Icon -->
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav-links" id="navMenu">
+            <a href="index.html">Blog</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="cta-btn">Request a Quote</a>
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙 Toggle Theme</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Enterprise Print Insights</h1>
+            <p>B2B guides on structural packaging, brand engineering, event souvenirs, and industrial offset vs. digital production lines.</p>
+            
+            <!-- Dynamic Search Bar -->
+            <div class="search-container">
+                <input type="text" id="blogSearch" placeholder="Search articles (e.g., Packaging, Pantone, Offset)...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Blog Feed Container -->
+    <main class="container blog-layout">
+        
+        <!-- Category Filter Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Content Pillars</h3>
+                <ul class="category-list">
+                    <li><button class="filter-btn active" data-filter="all">All Topics</button></li>
+                    <li><button class="filter-btn" data-filter="souvenirs">Event Souvenirs</button></li>
+                    <li><button class="filter-btn" data-filter="packaging">Packaging</button></li>
+                    <li><button class="filter-btn" data-filter="branding">Brand Identity</button></li>
+                    <li><button class="filter-btn" data-filter="brochures">Brochures & Collateral</button></li>
+                    <li><button class="filter-btn" data-filter="tech">Production Tech</button></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Articles Grid Feed -->
+       <!-- Enhanced Articles Grid Feed inside index.html -->
+<section class="articles-grid" id="articlesGrid">
+    
+    <!-- Topic 1: Souvenirs -->
+    <article class="blog-card" data-category="souvenirs">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Premium corporate event leather diaries and engraved pens" class="card-img">
+        </div>
+        <div class="card-badge">Event Souvenirs</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=souvenirs">How to Select Premium Executive Gifts That Keep Your Brand Top-of-Mind</a></h2>
+            <p>Discover strategies for sourcing functional, high-retention corporate gifts that elevate your brand image during elite corporate events.</p>
+            <div class="card-footer">
+                <span>June 8, 2026</span>
+                <a href="article-detail.html?id=souvenirs" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Topic 2: Packaging -->
+    <article class="blog-card" data-category="packaging">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Custom rigid structural cosmetics boxes lined up on printing floor" class="card-img">
+        </div>
+        <div class="card-badge">Packaging</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=packaging">Sizing and Material Guide: Choosing Between Rigid Boxes and Folding Cartons</a></h2>
+            <p>An in-depth industrial breakdown of packaging materials, structural engineering, and box layouts to minimize shipping overheads.</p>
+            <div class="card-footer">
+                <span>June 5, 2026</span>
+                <a href="article-detail.html?id=packaging" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Topic 3: Branding -->
+    <article class="blog-card" data-category="branding">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Pantone matching system swatches placed beside a digital display monitor" class="card-img">
+        </div>
+        <div class="card-badge">Brand Identity</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=branding">Why Your Brand Colors Look Different on Digital Screens vs. Coated Paper</a></h2>
+            <p>Learn how to preserve critical Pantone corporate colors across mixed print media types through certified ink management systems.</p>
+            <div class="card-footer">
+                <span>May 28, 2026</span>
+                <a href="article-detail.html?id=branding" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Topic 4: Brochures -->
+    <article class="blog-card" data-category="brochures">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Stack of high GSM glossy gate-fold corporate profile brochures" class="card-img">
+        </div>
+        <div class="card-badge">Brochures & Collateral</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=brochures">Choosing the Right Paper Weight (GSM) for Corporate Profiles vs. Handout Flyers</a></h2>
+            <p>Demystifying technical paper stocks, tactile coatings, and folding systems to optimize your high-volume marketing collateral print spend.</p>
+            <div class="card-footer">
+                <span>May 15, 2026</span>
+                <a href="article-detail.html?id=brochures" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Topic 5: Tech -->
+    <article class="blog-card" data-category="tech">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Massive commercial multi-unit Heidelberg offset printing press running at high speeds" class="card-img">
+        </div>
+        <div class="card-badge">Production Tech</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=tech">Offset vs. Digital Printing: Which Method Offers the Best ROI for Your Print Run?</a></h2>
+            <p>Analyze the production thresholds, setup times, and exact cost crossover boundaries of digital presses vs. high-volume offset systems.</p>
+            <div class="card-footer">
+                <span>May 02, 2026</span>
+                <a href="article-detail.html?id=tech" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- New Topic 6: Eco-Packaging (Added) -->
+    <article class="blog-card" data-category="packaging">
+        <div class="card-image-wrap">
+            <img src="https://picsum.photos" alt="Biodegradable eco-friendly brown kraft paper shopping bags with soy ink graphics" class="card-img">
+        </div>
+        <div class="card-badge">Packaging</div>
+        <div class="card-content">
+            <h2><a href="article-detail.html?id=eco_packaging">The Brand Manager's Guide to Sustainable Packaging and Soy Inks</a></h2>
+            <p>Uncover how modern biodegradable structural kraft paper options and plant-based soy inks can align your physical product logistics with corporate ESG targets.</p>
+            <div class="card-footer">
+                <span>April 22, 2026</span>
+                <a href="article-detail.html?id=eco_packaging" class="read-more">Read Guide &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+</section>
+
+		<!-- Pagination Navigation Control Bar -->
+<div class="pagination-controls" style="display: flex; justify-content: center; gap: 12px; margin-top: 40px; width: 100%;">
+    <button id="prevPage" class="filter-btn" style="width: auto; padding: 8px 16px;">&larr; Prev</button>
+    <span id="pageIndicator" style="align-self: center; font-weight: 600; color: var(--text-main);">Page 1 of 1</span>
+    <button id="nextPage" class="filter-btn" style="width: auto; padding: 8px 16px;">Next &rarr;</button>
+</div>
+
+    </main>
+
+    <!-- Validation-Backed B2B Quote Form Section -->
+    <section id="quote-section" class="quote-section">
+        <div class="container small-container">
+            <div class="quote-form-container">
+                <h2>Request a Production Estimate</h2>
+                <p>Submit your industrial print configurations below. Our engineers reply within 1 business hour.</p>
+                
+                <form id="b2bQuoteForm" novalidate>
+                    <div class="form-group">
+                        <label for="clientName">Corporate Contact Name *</label>
+                        <input type="text" id="clientName" required placeholder="Alex Johnson">
+                        <span class="error-msg" id="nameError">Name is required.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientEmail">Corporate Email *</label>
+                        <input type="email" id="clientEmail" required placeholder="alex@company.com">
+                        <span class="error-msg" id="emailError">Please enter a valid corporate email.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectType">Project Classification *</label>
+                            <select id="projectType" required>
+                                <option value="">-- Choose Category --</option>
+                                <option value="souvenirs">Event Souvenirs</option>
+                                <option value="packaging">Custom Packaging</option>
+                                <option value="branding">Brand Identity Materials</option>
+                                <option value="brochures">Brochures & Marketing Collateral</option>
+                            </select>
+                            <span class="error-msg" id="projectError">Please select a category.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="printRun">Estimated Quantity *</label>
+                            <input type="number" id="printRun" min="50" required placeholder="Min 50 units">
+                            <span class="error-msg" id="quantityError">Minimum run size is 50 units.</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Calculate Print Strategy &rarr;</button>
+                </form>
+                <div id="formSuccess" class="form-success-box">
+                    🎉 Quote configuration logged! A structural print consultant is reviewing your specifications.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 PrintExpertise Solutions Group. All corporate rights reserved.</p>
+    </footer>
+
+    <script src="archive.js"></script>
+	<script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Technical Article... | PrintExpertise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+		 <a href="index.html" class="logo">Print<span>Expertise</span></a>
+           <!-- Mobile Menu Trigger Icon -->
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav-links" id="navMenu">
+            <a href="index.html">Blog</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="cta-btn">Request a Quote</a>
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙 Toggle Theme</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Master Detail View Flex Wrapper -->
+    <div class="container detail-wrapper">
+        
+        <!-- Sticky Left-Side Social Sharing Hub -->
+        <aside class="sticky-share-panel">
+            <div class="share-title">SHARE</div>
+            <button class="share-btn x-btn" onclick="window.open('https://twitter.com)">𝕏</button>
+            <button class="share-btn ln-btn" onclick="window.open('https://linkedin.com)">in</button>
+            <button class="share-btn link-btn" id="copyLinkBtn">🔗</button>
+            <div class="copy-alert" id="copyAlert">Copied!</div>
+        </aside>
+
+        <!-- Article Content Wrapper -->
+        <!-- Article Content Wrapper inside article-detail.html -->
+<main class="container article-detail-container" style="max-width: 1200px; margin-top: 40px; margin-bottom: 64px;">
+    <a href="index.html" class="back-link">&larr; Back to Corporate Insights</a>
+    
+    <!-- 2-Column Responsive Split Layout Matrix Grid -->
+    <div class="article-split-layout" style="display: grid; grid-template-columns: 8fr 4fr; gap: 40px; align-items: start;">
+        
+        <!-- Column 1: Main Content Profile -->
+        <article class="full-article" style="background: #ffffff; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <div id="articleBadge" class="card-badge detail-badge" style="margin:0 0 16px 0;">Category</div>
+            <h1 id="articleTitle" style="font-size: 34px; margin-bottom: 16px; line-height: 1.3;">Article Header Title Loading...</h1>
+            <div id="articleMeta" class="article-meta" style="font-size: 14px; color: #718096; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color);">Published by Corporate Print Editorial Board</div>
+            
+            <!-- Hero Image Display Component Wrap -->
+            <div class="detail-image-container" style="width: 100%; border-radius: var(--radius); overflow: hidden; position: relative;">
+                <!-- Above-the-fold image loads eagerly to prevent layout shifts -->
+                <img id="articleHeroImage" src="" alt="Technical Print Concept Presentation" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px;" fetchpriority="high">
+            </div>
+            
+            <!-- Advanced Dynamic Caption Node -->
+            <figcaption id="imageCaption" style="font-size: 14px; font-style: italic; color: var(--text-main); margin-top: 10px; margin-bottom: 32px; padding-left: 12px; border-left: 3px solid var(--primary-color);">
+                Loading production spec overview...
+            </figcaption>
+            
+            <div id="articleBody" class="article-body">
+                <!-- Rich text content blocks inject here -->
+            </div>
+        </article>
+
+        <!-- Column 2: Sticky Related Posts Context Sidebar -->
+        <aside class="detail-sidebar" style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px;">
+            <div class="sidebar-widget" style="background: #ffffff; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <h3 style="margin-bottom: 16px; font-size: 18px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px;">Related Engineering Guides</h3>
+                <div id="relatedPostsContainer" style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Matching thumbnail card modules loop inject dynamically here via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Re-anchored Short B2B Quick Callout Button Panel -->
+            <div class="cta-box" style="margin-top: 0; padding: 24px; text-align: center;">
+                <h3 style="font-size: 20px; margin-bottom: 8px;">Need Custom Specs?</h3>
+                <p style="font-size: 14px; opacity: 0.9; margin-bottom: 16px;">Speak directly with a production line manager to review custom die-lines.</p>
+                <a href="contact.html" class="cta-btn large-cta" style="padding: 10px 20px; font-size: 14px;">Contact Plant Engineers</a>
+            </div>
+        </aside>
+
+    </div>
+</main>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PrintExpertise Solutions Group. All corporate rights reserved.</p>
+    </footer>
+
+	<script src="menu.js"></script>
+</body>
+</html>
